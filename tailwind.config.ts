@@ -70,6 +70,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        peach: "hsl(var(--peach))",
+        mint: "hsl(var(--mint))",
+        lavender: "hsl(var(--lavender))",
+        coral: "hsl(var(--coral))",
       },
       borderRadius: {
         lg: "var(--radius-lg)",
