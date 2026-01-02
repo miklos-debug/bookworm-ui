@@ -4,54 +4,54 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Book Summary App Design System - Dark Theme with Lime Accent */
+/* Book Summary App Design System - Light Theme (Blinkist-style) */
 
 @layer base {
   :root {
-    /* Core backgrounds */
-    --background: 0 0% 5%;
-    --background-elevated: 0 0% 10%;
-    --background-card: 0 0% 12%;
-    --background-input: 0 0% 15%;
+    /* Core backgrounds - Light theme */
+    --background: 0 0% 96%;
+    --background-elevated: 0 0% 100%;
+    --background-card: 0 0% 93%;
+    --background-input: 0 0% 100%;
     
     /* Foreground colors */
-    --foreground: 0 0% 98%;
-    --foreground-muted: 0 0% 60%;
-    --foreground-subtle: 0 0% 45%;
+    --foreground: 210 29% 20%;
+    --foreground-muted: 210 10% 45%;
+    --foreground-subtle: 210 10% 60%;
     
-    /* Lime accent - the signature color */
-    --accent: 68 78% 56%;
-    --accent-foreground: 0 0% 5%;
+    /* Blue accent - Blinkist signature */
+    --accent: 207 90% 54%;
+    --accent-foreground: 0 0% 100%;
     
     /* Card and surfaces */
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
-    --card-border: 0 0% 18%;
+    --card: 0 0% 93%;
+    --card-foreground: 210 29% 20%;
+    --card-border: 0 0% 85%;
     
     /* Popover */
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 29% 20%;
     
-    /* Primary (lime accent) */
-    --primary: 68 78% 56%;
-    --primary-foreground: 0 0% 5%;
+    /* Primary (dark blue) */
+    --primary: 210 29% 20%;
+    --primary-foreground: 0 0% 100%;
     
     /* Secondary */
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 93%;
+    --secondary-foreground: 210 29% 20%;
     
     /* Muted */
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 210 10% 45%;
     
     /* Destructive */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
     
     /* Border and input */
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 68 78% 56%;
+    --border: 0 0% 88%;
+    --input: 0 0% 100%;
+    --ring: 207 90% 54%;
     
     /* Radius */
     --radius: 0.75rem;
@@ -61,28 +61,28 @@
     --radius-full: 9999px;
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4);
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
     
     /* Bottom nav height */
     --nav-height: 5rem;
     
     /* Sidebar (keeping for compatibility) */
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 68 78% 56%;
-    --sidebar-primary-foreground: 0 0% 5%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 68 78% 56%;
-  }
-
-  /* No light mode - app is dark-only like Figma */
-  .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 29% 20%;
+    --sidebar-primary: 207 90% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 93%;
+    --sidebar-accent-foreground: 210 29% 20%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 207 90% 54%;
+    
+    /* Custom section colors */
+    --peach: 15 80% 85%;
+    --mint: 145 50% 85%;
+    --lavender: 240 40% 90%;
+    --coral: 10 70% 65%;
   }
 }
 
@@ -135,5 +135,19 @@
   /* Text gradient */
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent/70;
+  }
+  
+  /* Book card backgrounds */
+  .bg-peach {
+    background-color: hsl(var(--peach));
+  }
+  .bg-mint {
+    background-color: hsl(var(--mint));
+  }
+  .bg-lavender {
+    background-color: hsl(var(--lavender));
+  }
+  .bg-coral {
+    background-color: hsl(var(--coral));
   }
 }
