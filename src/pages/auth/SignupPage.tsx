@@ -2,6 +2,14 @@ import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 
+const STORAGE_KEYS = {
+  name: "onboardingName",
+  email: "onboardingEmail",
+  categories: "onboardingCategories",
+  books: "onboardingBooks",
+  userId: "onboardingUserId",
+};
+
 const SignupPage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
@@ -12,7 +20,19 @@ const SignupPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/home");
+    localStorage.setItem(STORAGE_KEYS.name, formData.name);
+    localStorage.setItem(STORAGE_KEYS.email, formData.email);
+    localStorage.removeItem(STORAGE_KEYS.categories);
+    localStorage.removeItem(STORAGE_KEYS.books);
+
+    if (!localStorage.getItem(STORAGE_KEYS.userId)) {
+      const generated = typeof crypto !== "undefined" && "randomUUID" in crypto
+        ? crypto.randomUUID()
+        : `guest-${Date.now()}`;
+      localStorage.setItem(STORAGE_KEYS.userId, generated);
+    }
+
+    navigate("/onboarding/topics");
   };
 
   return (

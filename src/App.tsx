@@ -9,6 +9,10 @@ import LoginPage from "./pages/auth/LoginPage";
 import SignupPage from "./pages/auth/SignupPage";
 import ForgotPasswordPage from "./pages/auth/ForgotPasswordPage";
 
+// Onboarding pages
+import OnboardingTopicsPage from "./pages/onboarding/OnboardingTopicsPage";
+import OnboardingBooksPage from "./pages/onboarding/OnboardingBooksPage";
+
 // Main pages
 import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
@@ -36,6 +40,10 @@ const App = () => (
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/signup" element={<SignupPage />} />
           <Route path="/auth/forgot" element={<ForgotPasswordPage />} />
+
+          {/* Onboarding routes */}
+          <Route path="/onboarding/topics" element={<OnboardingTopicsPage />} />
+          <Route path="/onboarding/books" element={<OnboardingBooksPage />} />
           
           {/* Main app routes */}
           <Route path="/home" element={<HomePage />} />
